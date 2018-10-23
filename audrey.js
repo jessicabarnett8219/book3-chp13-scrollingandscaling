@@ -1,14 +1,23 @@
+
 const audrey = document.getElementById("audrey")
 
-/*
-    Add an event listener to the `document` object to listen
-    for the "scroll" event.
-*/
-.addEventListener("", function () {
-    /*
-        Adjust the width of audrey to be 1/3 the value of
-        `window.scrollY`. No lower than 50px, though.
-    */
+document.addEventListener("scroll", (event) => {
+  let windowScrollY = window.scrollY
+  let windowScrollWidth = windowScrollY / 3
+  windowScrollWidth = windowScrollWidth.toString()
+  windowScrollWidth = `${windowScrollWidth}px`
+
+  audrey.style.width = windowScrollWidth
+  audrey.style.minWidth = "50px"
+  
+  let windowScrollHeight = windowScrollY / 4
+  windowScrollHeight = windowScrollHeight.toString()
+  windowScrollHeight = `${windowScrollHeight}px`
+
+  console.log(windowScrollHeight)
+
+  audrey.style.height = windowScrollHeight
+  audrey.style.minHeight = "100px"
 
 
 
@@ -17,3 +26,5 @@ const audrey = document.getElementById("audrey")
         `window.scrollY`. No lower than 100px, though.
     */
 })
+
+// console.log(audrey.width)
